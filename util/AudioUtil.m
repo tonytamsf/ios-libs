@@ -2,6 +2,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioServices.h>
+#import "Debug.h"
 
 @implementation AudioUtil
 
@@ -11,7 +12,7 @@
     SystemSoundID audioEffect;
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        NSLog(@"playing %@", fName);
+        DLog(@"playing %@", fName);
         
         NSURL *pathURL = [NSURL fileURLWithPath:path];
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &audioEffect);
@@ -19,7 +20,7 @@
     }
     
     else{
-        NSLog(@"Error, file not found: %@",path);
+        DLog(@"Error, file not found: %@",path);
     }
     
     
