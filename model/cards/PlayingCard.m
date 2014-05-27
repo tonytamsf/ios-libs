@@ -19,8 +19,8 @@
     NSArray *rankStrings = [PlayingCard rankStrings];
     
     DLog(@"getting contents %@ %@", rankStrings[self.rank], self.suit);
-    return [rankStrings[self.rank] stringByAppendingString:self.suit];
-
+    return rankStrings[self.rank];
+    //return [rankStrings[self.rank] stringByAppendingString:self.suit];
                               
 }
 
@@ -47,7 +47,7 @@
 + (NSArray *) rankStrings
 {
     return @[@"?",
-             @"A",
+             @"1",
              @"2",
              @"3",
              @"4",
@@ -57,9 +57,9 @@
              @"8",
              @"9",
              @"10",
-             @"J",
-             @"Q",
-             @"K"];
+             @"10",
+             @"10",
+             @"10"];
 }
 - (void) setSuit:(NSString *) suit
 {
@@ -85,7 +85,8 @@
         ) {
         return [UIColor blackColor];
     }
-    return [UIColor redColor];
+    // TODO
+    return [UIColor blackColor];
 }
 
 @end
