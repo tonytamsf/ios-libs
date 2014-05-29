@@ -29,12 +29,13 @@
 }
 
 - (NSUInteger) maxRank {
-    return [[self rankStrings] count] - 1;
+    return [[self rankStrings] count];
 }
 
-- (void) setRank:(NSUInteger) rank
+- (void) setRank:(NSInteger)  rank
 {
-        _rank = rank;
+    _rank = rank;
+    _strRank = [NSString stringWithFormat:@"%d", rank];
 }
 
 - (NSArray *) rankStrings

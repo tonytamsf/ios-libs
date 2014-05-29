@@ -18,9 +18,10 @@
     PlayingCardNoFace *playingCard = [[PlayingCardNoFace alloc] init];
     if (self) {
         for (NSString *suit in [PlayingCardNoFace validSuits]) {
-            for (NSUInteger rank = 1; rank <= [playingCard maxRank]; rank++) {
+            for (NSUInteger rank = 0; rank < [playingCard maxRank]; rank++) {
                 PlayingCardNoFace *card = [[PlayingCardNoFace alloc] init];
-                card.rank = rank;
+                card.rank = [[playingCard.rankStrings objectAtIndex:rank] integerValue];
+                card.strRank = [playingCard.rankStrings objectAtIndex:rank];
                 card.suit = suit;
                 [self addCard:card];
                 NSLog(@"rank = %d", (int) card.rank);

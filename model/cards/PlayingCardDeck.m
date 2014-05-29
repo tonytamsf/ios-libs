@@ -22,6 +22,7 @@
             for (NSUInteger rank = 1; rank <= [playingCard maxRank]; rank++) {
                 PlayingCard *card = [[PlayingCard alloc] init];
                 card.rank = rank;
+                card.strRank = [playingCard.rankStrings objectAtIndex:rank];
                 card.suit = suit;
                 [self addCard:card];
             }

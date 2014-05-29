@@ -22,6 +22,7 @@
             for (NSUInteger rank = 0; rank < [validRanks count]; rank++) {
                 PlayingCardEasy24 *card = [[PlayingCardEasy24 alloc] init];
 
+                card.strRank = [playingCard.rankStrings objectAtIndex:rank];
                 card.rank = [(NSString *)[validRanks objectAtIndex:rank] integerValue];;
                 NSLog(@"easy rank = %d %@", (int) card.rank, (NSString *)[validRanks objectAtIndex:rank]);
 
