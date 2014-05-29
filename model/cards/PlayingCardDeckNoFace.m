@@ -8,6 +8,7 @@
 
 #import "PlayingCardDeckNoFace.h"
 #import "PlayingCardNoFace.h"
+#import "Debug.h"
 
 @implementation PlayingCardDeckNoFace
 
@@ -24,7 +25,7 @@
                 card.strRank = [playingCard.rankStrings objectAtIndex:rank];
                 card.suit = suit;
                 [self addCard:card];
-                NSLog(@"rank = %d", (int) card.rank);
+                DLog(@"rank = %d", (int) card.rank);
             }
         }
     }

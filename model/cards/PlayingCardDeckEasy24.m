@@ -8,6 +8,7 @@
 
 #import "PlayingCardDeckEasy24.h"
 #import "PlayingCardEasy24.h"
+#import "Debug.h"
 
 @implementation PlayingCardDeckEasy24
 
@@ -24,7 +25,7 @@
 
                 card.strRank = [playingCard.rankStrings objectAtIndex:rank];
                 card.rank = [(NSString *)[validRanks objectAtIndex:rank] integerValue];;
-                NSLog(@"easy rank = %d %@", (int) card.rank, (NSString *)[validRanks objectAtIndex:rank]);
+                DLog(@"easy rank = %d %@", (int) card.rank, (NSString *)[validRanks objectAtIndex:rank]);
 
                 card.suit = suit;
                 [self addCard:card];
