@@ -16,8 +16,8 @@
 @property (nonatomic) NSUInteger rank;
 
 + (NSArray *)validSuits;
-+ (NSArray *)rankStrings;
-+ (NSUInteger) maxRank;
+- (NSArray *)rankStrings;
+- (NSUInteger) maxRank;
 - (UIColor *) cardColor;
 - (NSString *) description;
 

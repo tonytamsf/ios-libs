@@ -7,7 +7,27 @@
 //
 
 #import "PlayingCardDeckNoFace.h"
+#import "PlayingCardNoFace.h"
 
 @implementation PlayingCardDeckNoFace
+
+// always returns self
+// TODO, better way to do this for different type of cards
+- (instancetype) init
+{
+    PlayingCardNoFace *playingCard = [[PlayingCardNoFace alloc] init];
+    if (self) {
+        for (NSString *suit in [PlayingCardNoFace validSuits]) {
+            for (NSUInteger rank = 1; rank <= [playingCard maxRank]; rank++) {
+                PlayingCardNoFace *card = [[PlayingCardNoFace alloc] init];
+                card.rank = rank;
+                card.suit = suit;
+                [self addCard:card];
+                NSLog(@"rank = %d", (int) card.rank);
+            }
+        }
+    }
+    return self;
+}
 
 @end

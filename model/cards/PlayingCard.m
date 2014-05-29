@@ -16,38 +16,31 @@
 
 - (NSString *) contents
 {
-    NSArray *rankStrings = [PlayingCard rankStrings];
-    
-    DLog(@"getting contents %@ %@", rankStrings[self.rank], self.suit);
-    return rankStrings[self.rank];
-    //return [rankStrings[self.rank] stringByAppendingString:self.suit];
+    return [NSString stringWithFormat:@"%d", _rank];
                               
 }
 
 + (NSArray *) validSuits
 {
-    // TODO
     return @[@"♠︎",
              @"♣︎",
              @"♥︎",
              @"♦︎"];
 }
 
-+ (NSUInteger) maxRank {
+- (NSUInteger) maxRank {
     return [[self rankStrings] count] - 1;
 }
 
 - (void) setRank:(NSUInteger) rank
 {
-    if (rank <= [PlayingCard maxRank]) {
         _rank = rank;
-    }
 }
 
-+ (NSArray *) rankStrings
+- (NSArray *) rankStrings
 {
-    return @[@"?",
-             @"1",
+    return @[
+             @"A",
              @"2",
              @"3",
              @"4",
@@ -57,10 +50,11 @@
              @"8",
              @"9",
              @"10",
-             @"10",
-             @"10",
-             @"10"];
+             @"J",
+             @"Q",
+             @"K"];
 }
+
 - (void) setSuit:(NSString *) suit
 {
     if([[PlayingCard validSuits] containsObject:suit]) {

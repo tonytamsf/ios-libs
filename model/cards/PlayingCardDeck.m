@@ -14,11 +14,12 @@
 // always returns self
 - (instancetype) init
 {
+    PlayingCard *playingCard = [[PlayingCard alloc] init];
     self = [super init];
     DLog(@"init");
     if (self) {
         for (NSString *suit in [PlayingCard validSuits]) {
-            for (NSUInteger rank = 1; rank <= [PlayingCard maxRank]; rank++) {
+            for (NSUInteger rank = 1; rank <= [playingCard maxRank]; rank++) {
                 PlayingCard *card = [[PlayingCard alloc] init];
                 card.rank = rank;
                 card.suit = suit;

@@ -8,8 +8,8 @@
 //  Copyright (c) 2014 Yama Llama. All rights reserved.
 //
 
-#import "PlayingCard.h"
+#import "PlayingCardDeck.h"
 
-@interface PlayingCardDeckNoFace : PlayingCard
+@interface PlayingCardDeckNoFace : PlayingCardDeck
 
 @end
