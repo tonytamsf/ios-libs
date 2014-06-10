@@ -15,8 +15,8 @@
         DLog(@"playing %@", fName);
         
         NSURL *pathURL = [NSURL fileURLWithPath:path];
-        AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &audioEffect);
-        AudioServicesPlaySystemSound(audioEffect);
+        // AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &audioEffect);
+        // AudioServicesPlaySystemSound(audioEffect);
     }
     
     else{
