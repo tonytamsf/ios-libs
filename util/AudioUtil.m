@@ -13,8 +13,9 @@
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         DLog(@"playing %@", fName);
-        
+        NSError *err = [[NSError alloc] init];
         NSURL *pathURL = [NSURL fileURLWithPath:path];
+        AVAudioPlayer *av = [[AVAudioPlayer alloc] initWithContentsOfURL:pathURL error:&err];
         // AudioServicesCreateSystemSoundID((__bridge CFURLRef)pathURL, &audioEffect);
         // AudioServicesPlaySystemSound(audioEffect);
     }
