@@ -12,23 +12,24 @@
 @implementation PlayingCardDeckDeterministic
 - (instancetype) init
 {
-    PlayingCard *card = [[PlayingCard alloc] init];
     NSArray * ranks = @[
                         @"8",
-                        @"1",
+                        @"4",
                         @"6",
-                        @"3",
+                        @"6",
                         @"8",
                         @"1",
                         @"6",
                         @"3"];
     
-    for (int i = 0; i < [ranks count]; i++ ) {
-        card.rank = [[card.rankStrings objectAtIndex:[ranks objectAtIndex:i]] integerValue];
-        card.strRank = [card.rankStrings objectAtIndex:[ranks objectAtIndex:i]];
-        card.suit = @"";
+    for (int i = 0; i < [ranks count] - 1; i++ ) {
+        PlayingCard *card = [[PlayingCard alloc] init];
+
+        card.rank = [[ranks objectAtIndex:i ] integerValue];
+        card.strRank = [ranks objectAtIndex:i];
+        card.suit = @"♠︎";
         [self addCard:card];
-        DLog(@"rank = %d", (int) card.rank);
+        DLog(@"PlayingCardDeckDeterministic rank = %d", (int) card.rank);
     }
     return self;
 }
