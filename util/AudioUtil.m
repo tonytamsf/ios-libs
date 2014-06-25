@@ -33,7 +33,7 @@
         self.audioPlayer = [[AVAudioPlayer alloc] initWithData:data  error:&errPlayer];;
         
         if (self.audioPlayer == nil) {
-            DLog([errPlayer description]);
+            DLog(@"ERROR : %@", [errPlayer description]);
         }
 
         [self.audioPlayer prepareToPlay];

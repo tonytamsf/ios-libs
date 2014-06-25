@@ -20,7 +20,7 @@
     NSArray *validRanks = [playingCard rankStrings];
     if (self) {
         for (NSString *suit in [PlayingCardEasy24 validSuits]) {
-            for (NSUInteger rank = 0; rank < [validRanks count]; rank++) {
+            for (NSUInteger rank = 0; rank < [playingCard maxRank]; rank++) {
                 PlayingCardEasy24 *card = [[PlayingCardEasy24 alloc] init];
 
                 card.strRank = [playingCard.rankStrings objectAtIndex:rank];
